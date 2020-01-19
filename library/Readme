@@ -1,0 +1,39 @@
+1. File VbotBoard.h
+
+VnPort_Sig vnPort[17] =
+{
+  { NC, NC }, { 17, 16 }, { NC, NC }, { NC, NC }, {  2,  12 },
+  { 38, A0 }, { NC, NC }, { NC, 23 }, { NC, 32 }, {  NC,  25 },
+  { NC, 39 }, { NC, NC }, { NC, NC }, { NC, NC }, { NC, NC },
+  { NC, NC },{ NC, NC },
+};
+
+Định nghĩa các chân pin của ngoại vi của kit. Thứ tự các  ngoại vị được định nghĩa ở file Vnport.h như bên duoi
+
+#define ULTRA               (0x01)
+#define M1                  (0x01)
+#define M2                  (0x02)
+#define M3                  (0x03)
+#define FLOWLINE            (0x04)
+#define LIGHT_SENSOR        (0x05)
+#define SERVO               (0x06)
+#define RGB_LED             (0x07)
+#define BUZZER              (0x08)
+#define IR_REMOTE           (0x09)
+#define BUTTON              (0x0a)
+#define PORT_11             (0x0b)
+#define PORT_12             (0x0c)
+#define PORT_13             (0x0d)
+#define PORT_14             (0x0e)
+#define PORT_15             (0x0f)
+#define PORT_16             (0x10)
+
+Ví dụ như tren thì: 
+ULTRA sensor đang nối vào chân 17, 16 của ESP32 => check schematic để biết chi tiết
+RGB_LED đang nối vào chân 23 của ESP32
+BUZZER đang nối vào chân 32 của ESP32.
+Tương tu voi cac ngoai vi khac
+
+Neu muon lap trinh tuy chinh chan tren kit thi comment " #define VN_PORT_DEFINED" trong file VnConfig.h.
+khi #define VN_PORT_DEFINED thì các chân đã được define như ở trên trong fil Vnport.h. Khong can  quan tam 
+vi tri chan, chi can goi define tuong ung khi lap trinh la duoc.
